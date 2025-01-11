@@ -10,7 +10,7 @@ export const useProduct = create((set)=>({
             return {success:false,message:"Fill all the product details!"}
         }
         //fetching data from backend after adding product to backend
-        const res = await fetch("http://localhost:9000/api/products",{ 
+        const res = await fetch("https://justbuyit.onrender.com/api/products",{ 
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -24,13 +24,13 @@ export const useProduct = create((set)=>({
         return {success:true,message:"Product Successfully added!"}
     },
     fetchProducts: async()=>{
-        const res = await fetch("http://localhost:9000/api/products")
+        const res = await fetch("https://justbuyit.onrender.com/api/products")
         const data = await res.json()
         set({products:data.data})
     },
     //to delete product from database
     deleteProduct: async(product_id)=>{
-        const res = await fetch(`http://localhost:9000/api/products/${product_id}`,{method:"DELETE"})
+        const res = await fetch(`https://justbuyit.onrender.com/api/products/${product_id}`,{method:"DELETE"})
         const data = await res.json()
     
         if(!data.success){
@@ -43,7 +43,7 @@ export const useProduct = create((set)=>({
     },
     //to update product in database
     updateProduct: async(product_id,updatedproduct)=>{
-        const res = await fetch(`http://localhost:9000/api/products/${product_id}`,{
+        const res = await fetch(`https://justbuyit.onrender.com/api/products/${product_id}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
