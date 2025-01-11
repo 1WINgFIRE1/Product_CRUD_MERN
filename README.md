@@ -1,5 +1,5 @@
 
-```markdown
+
 # My React and Node.js Project
 
 This project is a full-stack application built with React for the frontend and Node.js for the backend. It connects to a MongoDB Atlas database and is deployed on Render.
